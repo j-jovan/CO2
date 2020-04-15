@@ -13,7 +13,7 @@
 */
 
 #include <Wire.h>
-#include <SparkFun_SCD30_Arduino_Library.h> // http://librarymanager/All#SparkFun_SCD30
+#include <SparkFun_SCD30_Arduino_Library.h> // http://librarymanager/All#SparkFun_SCD30 (https://github.com/sparkfun/SparkFun_SCD30_Arduino_Library)
 #include <LiquidCrystal_I2C.h> // https://github.com/fdebrabander/Arduino-LiquidCrystal-I2C-library
 
 LiquidCrystal_I2C lcd(0x27, 20, 4);
@@ -46,10 +46,10 @@ void loop()
     Serial.print("CO2(ppm): ");
     Serial.print(co2);
 
-    Serial.print(" temp(C): ");
+    Serial.print(", temp(C): ");
     Serial.print(temp, 1);
 
-    Serial.print(" humidity(%): ");
+    Serial.print(", vlaznost vazduha(%): ");
     Serial.print(vlaznost, 1);
 
     lcd.setCursor(0, 0);
@@ -67,7 +67,7 @@ void loop()
     if (co2 > 2000 and co2 < 5000)
       Serial.println("Glavobolja, pospanost, zagadjen vazduh, losa koncentracija, gubitak paznje i ubrzan rad srca");
     if (co2 > 5000)
-      Serial.println("How are you reading this? And why?");
+      Serial.println("How are you still alive?");
     if (co2 > 40000)
       Serial.println("RIP");
   }
